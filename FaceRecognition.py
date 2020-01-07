@@ -6,7 +6,6 @@ faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontal
 eyeCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml') #olhos
 smileCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_smile.xml') #boca
 
-face_id = input('\ n insira o ID do usuário e pressione ==>')
 
 cap = cv2.VideoCapture(0) #pegando a camera principal e retornando a variável
 cap.set(3, 800) #exibindo em um tamanho especificado
