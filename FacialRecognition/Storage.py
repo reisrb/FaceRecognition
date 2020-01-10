@@ -13,7 +13,7 @@ face_id = input('\n insira um id de usuário e pessione <enter> ==>  ')
 
 print("\n [INFO] iniciando captura de rosto. Olhe a câmera e aguarde ...")
 
-count = 0
+count = 1
 
 while(True):
     ret, img = cam.read()

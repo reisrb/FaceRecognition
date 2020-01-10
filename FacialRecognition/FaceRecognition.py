@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import os
 
+
 #treinando o algoritmo de reconhecimento
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -15,7 +16,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 
 id = 0
 
-names = ['none', 'Rafael', 'Cleonice']
+names = ['', 'Lord Rafael', 'Cleonice']
 
 cam = cv2.VideoCapture(0)
 cam.set(3, 800)
@@ -37,16 +38,16 @@ while True:
         minSize = (int(minW), int(minH))
     )
     for(x, y, w, h) in faces:
-        cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
         id, confidence = recognizer.predict(gray[y:y+h, x:x+w])
 
-        #se 100 ==> "0": match perfeito
-        if(confidence < 100):
+        if confidence > 50:
+            cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
             id = names[id]
-            confidence = " {0}%".format(round(100 - confidence))
+            confidence = " {0}%".format(round(confidence))
         else:
-            id = "unknow"
-            confidence = " {0}%".format(round(100 - confidence))
+            cv2.rectangle(img, (x, y), (x+w, y+h), (0, 0, 255), 2)
+            id = "Sem registro"
+            confidence = " {0}%".format(round(confidence))
 
         cv2.putText(
             img,
