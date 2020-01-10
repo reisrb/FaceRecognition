@@ -5,14 +5,17 @@ import os
 #treinando o algoritmo de reconhecimento
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read('/home/reis/Documentos/GIT/FaceRecognition/FacialRecognition/trainer/trainer.yml')
+
+#recognizer.read('/home/reis/Documentos/GIT/FaceRecognition/FacialRecognition/trainer/trainer.yml') #linux
+recognizer.read('C:/Users/rafae/OneDrive - Digital School - BandTec/PESSOAL/Projetos/FaceRecognition/FacialRecognition/trainer/trainer.yml') #windows
+
 cascadePath = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath)
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 id = 0
 
-names = ['none', 'Rafael', 'Cleonice', 'Paula', 'Ilza', 'Z', 'W']
+names = ['none', 'Rafael', 'Cleonice']
 
 cam = cv2.VideoCapture(0)
 cam.set(3, 800)
