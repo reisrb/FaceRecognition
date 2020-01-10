@@ -7,7 +7,7 @@ import os
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 #recognizer.read('/home/reis/Documentos/GIT/FaceRecognition/FacialRecognition/trainer/trainer.yml') #linux
-recognizer.read('C:/Users/rafae/OneDrive - Digital School - BandTec/PESSOAL/Projetos/FaceRecognition/FacialRecognition/trainer/trainer.yml') #windows
+recognizer.read('trainer/trainer.yml') #windows
 
 cascadePath = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath)
