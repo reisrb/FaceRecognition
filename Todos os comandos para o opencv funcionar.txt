@@ -2,12 +2,11 @@ python 3.7
 
 opencv
 
-pip install numpy
-pip install opencv-python
+pip3 install numpy
+pip3 install opencv-python
 
 contrib 
-pip install opencv-contrib-python
+pip3 install opencv-contrib-python
 
 pillow
-
-pip install pillow
+pip3 install pillow
