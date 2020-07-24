@@ -3,15 +3,11 @@ import numpy as np
 from PIL import Image
 import os
 
-import Storage as storage
 
 def training():
 
-    print(storage.tpath)
-
     # pastas das imagens do id
-    # path = os.path.dirname(os.path.abspath(__file__)) + '/dataset'
-    path = storage.path + '/dataset'
+    path = os.path.dirname(os.path.abspath(__file__)) + '/dataset'
 
     # HINTOGRAMAS DE PADRÕES BINÁRIOS LOCAIS
     recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -42,11 +38,8 @@ def training():
     recognizer.train(faces, np.array(ids))
 
     # Salvando o modelo em trainer/trainer.yml
-    recognizer.write(f'{storage.path}/trainer/trainer.yml')
+    recognizer.write(f'{path}/../trainer/trainer.yml')
 
     # Print the numer of faces trained and end program
-    print("\n [INFO] {0} faces treinadas. Saindo do programa".format(
+    print("\n {0} faces treinadas. Saindo do programa!".format(
         len(np.unique(ids))))
-
-
-training()

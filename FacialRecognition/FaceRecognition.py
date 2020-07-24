@@ -16,7 +16,13 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 
 id = 0
 
-names = ['', 'Rafael', 'meu amo', 'tonice']
+names = []
+
+f = open(f'{path}/names.txt', 'r')
+for line in f:
+    names.append(line.split('-')[1].strip())
+
+print(names)
 
 cam = cv2.VideoCapture(0)
 cam.set(3, 800)
@@ -34,7 +40,7 @@ while True:
     faces = faceCascade.detectMultiScale(
         gray,
         scaleFactor = 1.2,
-        minNeighbors = 5,
+        minNeighbors = 2,
         minSize = (int(minW), int(minH))
     )
     for(x, y, w, h) in faces:
