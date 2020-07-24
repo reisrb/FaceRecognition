@@ -45,8 +45,6 @@ while True:
 
             ########################
 
-            print(id)
-
             id = names[id]
             confidence = " {0}%".format(round(confidence))
         else:

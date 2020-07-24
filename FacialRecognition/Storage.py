@@ -1,6 +1,6 @@
 import cv2
 import os
-# import FaceTraining as faceTraining
+import FaceTraining as faceTraining
 
 import os
 
@@ -60,7 +60,7 @@ def register():
     cam.release()
     cv2.destroyAllWindows()
 
-    # faceTraining.training()
+    faceTraining.training()
 
 if isNotRegister:
     with open(f'{path}/names.txt', 'a') as outFile:
