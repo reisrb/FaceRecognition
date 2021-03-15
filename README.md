@@ -37,6 +37,6 @@
     python3 FaceTraining.py
     
     
-> Step 3 recongnizer
+> Step 3 recognizer
 
     python3 FaceRecognition.py
